@@ -79,3 +79,7 @@ UFCJ_UNLOCK_TEST=yes python scripts/run_test.py 100   # the one-time test evalua
 - Only fights that went to a decision are included.
 - The weights are predictive associations with judges' cards, not a description of what judges consciously score.
 - Judge results can't separate a style preference from reacting to things the stats don't record.
+
+## License
+
+Code, tests and reports in this repository are released under the [MIT License](LICENSE). The license does not cover UFC data, which this repository does not contain.
