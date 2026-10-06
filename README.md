@@ -2,7 +2,7 @@
 
 An evaluation project: how well do round statistics reproduce UFC judges' scorecards, which stats do judges weight, and do individual judges score differently? Judges are anonymized in all published results.
 
-**Status:** Phases 0–2 done: data foundations, locked evaluation and baselines, and the round-scoring model (fit on 2017–21, evaluated on 2022–23). Test set untouched.
+**Status:** Phases 0–3 done: data foundations, locked evaluation and baselines, the round-scoring model (fit on 2017–21, evaluated on 2022–23), and Phase 3 analysis (confident misses, anonymized judge styles, pre/post-2017). Test set untouched.
 
 ## Data
 
@@ -22,6 +22,7 @@ PYTHONPATH=src python -m ufcj.load # build data/processed/*.csv and print exclus
 python -m pytest -q                # 16 data and evaluation tests; all must pass
 python scripts/run_baselines.py    # writes reports/phase1_baselines.md
 python scripts/run_phase2.py 100   # fit + evaluate + 100-refit bootstrap, ~10 min; use 20 for a quick run
+python scripts/run_phase3.py 100   # ~30 min; writes reports/phase3_analysis.md and reports/tape_review.csv
 ```
 
 ## Layout
@@ -34,6 +35,7 @@ python scripts/run_phase2.py 100   # fit + evaluate + 100-refit bootstrap, ~10 m
 | `src/ufcj/baselines.py` | One-rule baselines |
 | `src/ufcj/features.py` | Non-overlapping A-minus-B round features; no fighter-order information |
 | `src/ufcj/model.py` | Ordered five-outcome round model, learned from fight totals with a dynamic program over rounds |
+| `src/ufcj/judges.py` | Per-judge striking/grappling/10-8 deviations, LR tests, Benjamini-Hochberg, anonymization |
 | `tests/` | Data and evaluation tests |
 | `reports/` | Generated results |
 
