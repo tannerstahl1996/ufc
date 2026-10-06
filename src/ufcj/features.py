@@ -24,7 +24,13 @@ import pandas as pd
 
 FEATURES = ["dist", "clinch", "ground", "sig_missed", "nonsig", "kd",
             "td", "td_failed", "sub", "rev", "ctrl_min"]
+# Secondary, pre-registered variant (2026-10-06, after the tape review): split landed
+# significant strikes by TARGET instead of by position. Same everything else.
+FEATURES_TARGET = ["head", "body", "leg"] + FEATURES[3:]
+FEATURE_SETS = {"position": FEATURES, "target": FEATURES_TARGET}
+
 UNITS = {
+    "head": "head sig. strike", "body": "body sig. strike", "leg": "leg sig. strike",
     "dist": "distance sig. strike", "clinch": "clinch sig. strike", "ground": "ground sig. strike",
     "sig_missed": "missed sig. strike", "nonsig": "non-sig. strike", "kd": "knockdown",
     "td": "takedown", "td_failed": "failed takedown", "sub": "submission attempt",
@@ -40,9 +46,10 @@ def side(rounds: pd.DataFrame, s: str) -> pd.DataFrame:
         "kd": rounds[f"kd_{s}"], "td": rounds[f"td_{s}"],
         "td_failed": rounds[f"td_att_{s}"] - rounds[f"td_{s}"],
         "sub": rounds[f"sub_{s}"], "rev": rounds[f"rev_{s}"], "ctrl_min": rounds[f"ctrl_{s}"] / 60.0,
+        "head": rounds[f"head_{s}"], "body": rounds[f"body_{s}"], "leg": rounds[f"leg_{s}"],
     })
 
 
-def round_features(rounds: pd.DataFrame) -> pd.DataFrame:
+def round_features(rounds: pd.DataFrame, feature_set: str = "position") -> pd.DataFrame:
     """A-minus-B differential for every round, in natural units."""
-    return side(rounds, "A") - side(rounds, "B")
+    return (side(rounds, "A") - side(rounds, "B"))[FEATURE_SETS[feature_set]]

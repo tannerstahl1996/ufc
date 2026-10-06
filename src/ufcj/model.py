@@ -31,7 +31,7 @@ import pandas as pd
 from scipy.optimize import minimize
 from scipy.special import expit
 
-from .features import FEATURES, round_features
+from .features import FEATURES, FEATURE_SETS, round_features
 
 # (A points, B points) for each of the five round outcomes, minus 8
 A_OFF = np.array([0, 1, 2, 2, 2])
@@ -49,11 +49,14 @@ def category_probs(eta: np.ndarray, t1: float, t2: float) -> np.ndarray:
 class Prepared:
     """Arrays laid out for fast likelihood evaluation. Built once per data subset."""
 
-    def __init__(self, cards: pd.DataFrame, rounds: pd.DataFrame, scale: pd.Series | None = None):
+    def __init__(self, cards: pd.DataFrame, rounds: pd.DataFrame, scale: pd.Series | None = None,
+                 feature_set: str = "position"):
         rounds = rounds.sort_values(["fid", "rnd"]).reset_index(drop=True)
-        X = round_features(rounds)
+        self.features = FEATURE_SETS[feature_set]
+        self.feature_set = feature_set
+        X = round_features(rounds, feature_set)
         self.scale = X.std() if scale is None else scale  # scale only: centring would add an intercept
-        self.X = (X / self.scale)[FEATURES].to_numpy()
+        self.X = (X / self.scale)[self.features].to_numpy()
         self.rounds = rounds
         self.groups = {}  # n_rounds -> (fight ids, round index matrix)
         for n, g in rounds.groupby(rounds.groupby("fid").rnd.transform("size")):
@@ -144,7 +147,7 @@ def card_predictions(prep: Prepared, params: np.ndarray) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def weights_table(params: np.ndarray, scale: pd.Series) -> pd.DataFrame:
+def weights_table(params: np.ndarray, scale: pd.Series, features: list[str] = FEATURES) -> pd.DataFrame:
     """Weights in natural units (log-odds per one unit of the stat differential)."""
     w, _, _ = unpack(params)
-    return pd.DataFrame({"per_sd": w, "per_unit": w / scale[FEATURES].to_numpy()}, index=FEATURES)
+    return pd.DataFrame({"per_sd": w, "per_unit": w / scale[features].to_numpy()}, index=features)
