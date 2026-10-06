@@ -2,7 +2,19 @@
 
 An evaluation project: how well do round statistics reproduce UFC judges' scorecards, which stats do judges weight, and do individual judges score differently? Judges are anonymized in all published results.
 
-**Status:** Phases 0–3 done: data foundations, locked evaluation and baselines, the round-scoring model (fit on 2017–21, evaluated on 2022–23), and Phase 3 analysis (confident misses, anonymized judge styles, pre/post-2017). Test set untouched.
+**Status:** Complete through the final, pre-registered test evaluation. Phases 0–3 done: data foundations, locked evaluation and baselines, the round-scoring model (fit on 2017–21, evaluated on 2022–23), and Phase 3 analysis (confident misses, anonymized judge styles, pre/post-2017). The test set (2024+) was evaluated once, as pre-registered.
+
+## Headline results (test set, 2024-01-01 to 2026-10-03, 715 fights, 2,145 cards)
+
+| Method | Picks each judge's winner | Exact round count |
+|---|---|---|
+| More significant strikes (best one-stat rule) | 75.3% [72.4, 78.0] | 49.1% [46.3, 52.1] |
+| **Model** (fit on 2017–23) | **83.3%** [81.1, 85.6] | **59.8%** [57.3, 62.8] |
+| Ceiling: each fight's most common card | 94.1% [93.1, 95.0] | 82.9% [81.4, 84.3] |
+
+Calibration error 0.027. The pre-registered secondary hypotheses both held: judges value a landed leg strike at about half a head strike (0.50 [0.33, 0.63]), and the model's confident misses lean on leg-strike volume. Full results: `reports/test_results.md`. Pre-registration: `reports/preregistration_test.md`.
+
+Confident-miss review (`reports/tape_review_categories.csv`): categorized from post-fight coverage and media scorecards, not tape. In 10 of the 25 most confident misses from 2017–23, media scorers sided with the model against all three judges.
 
 ## Data
 
@@ -23,6 +35,7 @@ python -m pytest -q                # 16 data and evaluation tests; all must pass
 python scripts/run_baselines.py    # writes reports/phase1_baselines.md
 python scripts/run_phase2.py 100   # fit + evaluate + 100-refit bootstrap, ~10 min; use 20 for a quick run
 python scripts/run_phase3.py 100   # ~30 min; writes reports/phase3_analysis.md and reports/tape_review.csv
+UFCJ_UNLOCK_TEST=yes python scripts/run_test.py 100   # the one-time test evaluation (already run; re-running reproduces it)
 ```
 
 ## Layout
@@ -53,3 +66,12 @@ python scripts/run_phase3.py 100   # ~30 min; writes reports/phase3_analysis.md 
 - 21 exact-duplicate round-stat rows dropped. 1 fight with conflicting duplicate stats is excluded.
 - Judge names are sometimes missing or glued to the score. The parser handles both; missing names become `UNKNOWN`.
 - 122 of 4,138 decisions are excluded. See `data/processed/exclusions.csv` for the reason per fight.
+
+## Limitations
+
+- Labels are judges' fight totals. Round-by-round cards aren't available, so round-level conclusions come from the model, not from observed round scores.
+- Point deductions appear in card totals and are read as 10-8 rounds. They can't be detected in this data.
+- UFCStats counts come from a stats vendor and don't measure damage, which is the top official criterion. At least one recording error was found (a fight with missing ground strikes).
+- Only fights that went to a decision are included.
+- The weights are predictive associations with judges' cards, not a description of what judges consciously score.
+- Judge results can't separate a style preference from reacting to things the stats don't record.
