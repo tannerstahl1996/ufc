@@ -2,7 +2,7 @@
 
 An evaluation project: how well do round statistics reproduce UFC judges' scorecards, which stats do judges weight, and do individual judges score differently? Judges are anonymized in all published results.
 
-**Status:** Phase 0 (data foundations) and Phase 1 (locked evaluation + baselines) done. No model has been fit yet.
+**Status:** Phases 0–2 done: data foundations, locked evaluation and baselines, and the round-scoring model (fit on 2017–21, evaluated on 2022–23). Test set untouched.
 
 ## Data
 
@@ -21,6 +21,7 @@ python scripts/fetch_data.py       # download + verify pinned raw data
 PYTHONPATH=src python -m ufcj.load # build data/processed/*.csv and print exclusions
 python -m pytest -q                # 16 data and evaluation tests; all must pass
 python scripts/run_baselines.py    # writes reports/phase1_baselines.md
+python scripts/run_phase2.py 100   # fit + evaluate + 100-refit bootstrap, ~10 min; use 20 for a quick run
 ```
 
 ## Layout
@@ -31,6 +32,8 @@ python scripts/run_baselines.py    # writes reports/phase1_baselines.md
 | `src/ufcj/splits.py` | Locked splits: train 2017–21, tune 2022–23, test 2024+; pre-2017 held apart; grouped random split for the drift check |
 | `src/ufcj/evaluate.py` | Locked metrics, ceilings, fight-level bootstrap CIs, test-set lock |
 | `src/ufcj/baselines.py` | One-rule baselines |
+| `src/ufcj/features.py` | Non-overlapping A-minus-B round features; no fighter-order information |
+| `src/ufcj/model.py` | Ordered five-outcome round model, learned from fight totals with a dynamic program over rounds |
 | `tests/` | Data and evaluation tests |
 | `reports/` | Generated results |
 
