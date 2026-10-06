@@ -14,13 +14,17 @@ An evaluation project: how well do round statistics reproduce UFC judges' scorec
 
 Calibration error 0.027. The pre-registered secondary hypotheses both held: judges value a landed leg strike at about half a head strike (0.50 [0.33, 0.63]), and the model's confident misses lean on leg-strike volume. Full results: `reports/test_results.md`. Pre-registration: `reports/preregistration_test.md`.
 
-Confident-miss review (`reports/tape_review_categories.csv`): categorized from post-fight coverage and media scorecards, not tape. In 10 of the 25 most confident misses from 2017–23, media scorers sided with the model against all three judges.
+Confident-miss review (`reports/tape_review_categories.csv`; per-round stat lines kept local): categorized from post-fight coverage and media scorecards, not tape. In 10 of the 25 most confident misses from 2017–23, media scorers sided with the model against all three judges.
 
-## Data
+## Data and terms of use
 
-Third-party scrape of ufcstats.com from [Greco1899/scrape_ufc_stats](https://github.com/Greco1899/scrape_ufc_stats) (GPL-3.0), pinned to commit `1ccacc5` (last event 2026-10-03). `scripts/fetch_data.py` downloads that exact version and checks the SHA-256 of every file against `data/MANIFEST.json`.
+**This repository does not include or redistribute any UFC data.** Raw and processed data are gitignored, and the published reports contain only aggregate results and model outputs.
 
-UFCStats only gives each judge's fight total, not round-by-round cards. When a card's totals are consistent with every round being 10-9, the total tells us how many rounds each fighter won (but not which ones). The model in Phase 2 learns round-level weights from those totals.
+The analysis was run on a third-party scrape of ufcstats.com ([Greco1899/scrape_ufc_stats](https://github.com/Greco1899/scrape_ufc_stats), GPL-3.0), pinned to commit `1ccacc5` (last event 2026-10-03). `scripts/fetch_data.py` downloads that version and checks the SHA-256 of every file against `data/MANIFEST.json`, but only when run with `--i-have-read-the-terms`.
+
+UFC's [Terms of Use](https://www.ufc.com/terms) prohibit scraping and "constructing any kind of database" from UFC website content except for personal, non-commercial use. Whether they cover ufcstats.com is unclear. If you reproduce this work, read the terms and decide for yourself. This project is non-commercial research and commentary.
+
+UFCStats only gives each judge's fight total, not round-by-round cards. When a card's totals are consistent with every round being 10-9, the total tells us how many rounds each fighter won (but not which ones). The model learns round-level weights from those totals.
 
 ## Setup (Mac, Terminal)
 
@@ -29,9 +33,9 @@ cd ufc-judging
 python3 -m venv .venv
 source .venv/bin/activate          # run this in every new Terminal window before working
 pip install -r requirements.txt
-python scripts/fetch_data.py       # download + verify pinned raw data
-PYTHONPATH=src python -m ufcj.load # build data/processed/*.csv and print exclusions
-python -m pytest -q                # 16 data and evaluation tests; all must pass
+python scripts/fetch_data.py --i-have-read-the-terms
+PYTHONPATH=src python -m ufcj.load
+python -m pytest -q
 python scripts/run_baselines.py    # writes reports/phase1_baselines.md
 python scripts/run_phase2.py 100   # fit + evaluate + 100-refit bootstrap, ~10 min; use 20 for a quick run
 python scripts/run_phase3.py 100   # ~30 min; writes reports/phase3_analysis.md and reports/tape_review.csv

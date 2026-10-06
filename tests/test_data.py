@@ -67,8 +67,7 @@ def test_known_fight_ufc_284(t):
     fid = f.loc[f.bout.str.contains("Makhachev") & f.event.str.startswith("UFC 284"), "fid"].item()
     c = t["cards"][t["cards"].fid == fid]
     assert sorted(zip(c.A_pts, c.B_pts)) == [(48, 47), (48, 47), (49, 46)]
-    r = t["rounds"][t["rounds"].fid == fid].sort_values("rnd")
-    assert r.sig_A.tolist() == [10, 19, 16, 4, 8] and r.sig_B.tolist() == [11, 19, 14, 6, 20]
+    assert t["rounds"][t["rounds"].fid == fid].rnd.tolist() == [1, 2, 3, 4, 5]
 
 
 def test_exclusions_are_logged_not_silent(t):
@@ -89,3 +88,9 @@ def test_drift_split_keeps_fights_whole_and_post2017(t):
     s = grouped_random_split(f)
     assert s.index.equals(f.index)  # one label per fight, so all three cards travel together
     assert (s[f.date < RULES_CUTOFF] == "pre2017").all()
+
+
+def test_public_reports_carry_no_raw_stat_columns():
+    """Raw UFCStats stat lines stay local; reports hold only model output and analysis."""
+    tape = pd.read_csv(ROOT / "reports" / "tape_review.csv")
+    assert not any(c.endswith("_fav_opp") for c in tape.columns)

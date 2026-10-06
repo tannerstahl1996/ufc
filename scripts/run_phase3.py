@@ -128,8 +128,13 @@ for fid, m in miss.sort_values("conf", ascending=False).iterrows():
             "what_the_stats_missed": "", "category": "", "notes": "",
         })
 tape = pd.DataFrame(rows)
-tape.to_csv(ROOT / "reports" / "tape_review.csv", index=False)
-L += [f"**Tape review sheet:** `reports/tape_review.csv` lists the {len(miss)} missed fights, with the two rounds "
+# Full sheet with per-round stat lines stays local (data/processed is gitignored).
+# The public report omits the UFCStats stat columns; see README "Data and terms of use".
+tape.to_csv(ROOT / "data" / "processed" / "tape_review_with_stats.csv", index=False)
+stat_cols = ["sig_landed_fav_opp", "kd_fav_opp", "td_fav_opp", "ctrl_sec_fav_opp",
+             "what_the_stats_missed", "category", "notes"]
+tape.drop(columns=stat_cols).to_csv(ROOT / "reports" / "tape_review.csv", index=False)
+L += [f"**Tape review sheet:** `reports/tape_review.csv` (stat lines kept local in data/processed) lists the {len(miss)} missed fights, with the two rounds "
       "per fight the model was most sure the favoured fighter won (at least one of them must have gone the other "
       "way on every card). Suggested categories: *damage not in the stats*, *late-round surge*, "
       "*control without offense*, *stat recording error*, *questionable scoring*, *other*.", "",

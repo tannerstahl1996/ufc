@@ -1,51 +1,51 @@
-date,event,bout,model_favoured,model_conf,round,p_fav_won_round,sig_landed_fav_opp,kd_fav_opp,td_fav_opp,ctrl_sec_fav_opp,what_the_stats_missed,category,notes
-2022-02-26,UFC Fight Night: Makhachev vs. Green,Ji Yeon Kim vs. Priscila Cachoeira,Ji Yeon Kim,0.967,3,0.967,85-52,0-0,0-0,5-21,,,
-2022-02-26,UFC Fight Night: Makhachev vs. Green,Ji Yeon Kim vs. Priscila Cachoeira,Ji Yeon Kim,0.967,2,0.908,54-32,0-0,0-0,0-0,,,
-2023-12-16,UFC 296: Edwards vs. Covington,Irene Aldana vs. Karol Rosa,Karol Rosa,0.966,3,0.966,92-61,0-0,0-0,0-0,,,
-2023-12-16,UFC 296: Edwards vs. Covington,Irene Aldana vs. Karol Rosa,Karol Rosa,0.966,1,0.854,45-30,0-0,0-0,0-0,,,
-2018-12-15,UFC Fight Night: Lee vs. Iaquinta,King Green vs. Drakkar Klose,King Green,0.964,2,0.988,22-7,0-0,1-0,177-5,,,
-2018-12-15,UFC Fight Night: Lee vs. Iaquinta,King Green vs. Drakkar Klose,King Green,0.964,1,0.899,30-18,0-0,0-0,9-46,,,
-2019-06-08,UFC 238: Cejudo vs. Moraes,Katlyn Cerminara vs. Joanne Wood,Joanne Wood,0.944,1,0.917,45-26,0-0,0-0,0-0,,,
-2019-06-08,UFC 238: Cejudo vs. Moraes,Katlyn Cerminara vs. Joanne Wood,Joanne Wood,0.944,3,0.837,39-29,0-0,1-0,14-0,,,
-2023-10-07,UFC Fight Night: Dawson vs. Green,Vanessa Demopoulos vs. Kanako Murata,Kanako Murata,0.944,3,0.981,16-5,0-0,2-0,255-22,,,
-2023-10-07,UFC Fight Night: Dawson vs. Green,Vanessa Demopoulos vs. Kanako Murata,Kanako Murata,0.944,2,0.9,9-9,0-0,1-0,251-0,,,
-2022-04-30,UFC Fight Night: Font vs. Vera,Rob Font vs. Marlon Vera,Rob Font,0.935,1,0.972,57-26,0-0,0-0,0-0,,,
-2022-04-30,UFC Fight Night: Font vs. Vera,Rob Font vs. Marlon Vera,Rob Font,0.935,3,0.9,71-37,0-1,1-0,18-33,,,
-2020-08-01,UFC Fight Night: Brunson vs. Shahbazyan,Johnny Munoz vs. Nate Maness,Johnny Munoz,0.922,1,0.985,19-2,0-0,1-0,196-0,,,
-2020-08-01,UFC Fight Night: Brunson vs. Shahbazyan,Johnny Munoz vs. Nate Maness,Johnny Munoz,0.922,3,0.812,16-9,0-0,0-1,220-51,,,
-2019-08-31,UFC Fight Night: Andrade vs. Zhang,Alatengheili vs. Batgerel Danaa,Batgerel Danaa,0.905,2,0.9,31-11,0-0,0-0,6-0,,,
-2019-08-31,UFC Fight Night: Andrade vs. Zhang,Alatengheili vs. Batgerel Danaa,Batgerel Danaa,0.905,3,0.827,33-11,0-0,0-3,0-172,,,
-2020-11-21,UFC 255: Figueiredo vs. Perez,Daniel Rodriguez vs. Nicolas Dalby,Daniel Rodriguez,0.889,1,0.814,31-17,0-0,0-0,0-0,,,
-2020-11-21,UFC 255: Figueiredo vs. Perez,Daniel Rodriguez vs. Nicolas Dalby,Daniel Rodriguez,0.889,2,0.785,17-9,0-0,0-0,39-55,,,
-2020-10-31,UFC Fight Night: Hall vs. Silva,King Green vs. Thiago Moises,King Green,0.889,1,0.819,26-13,0-0,0-1,23-16,,,
-2020-10-31,UFC Fight Night: Hall vs. Silva,King Green vs. Thiago Moises,King Green,0.889,3,0.793,30-15,0-0,1-1,16-75,,,
-2019-03-23,UFC Fight Night: Thompson vs. Pettis,Alexis Davis vs. Jennifer Maia,Alexis Davis,0.881,2,0.931,10-8,0-0,1-0,200-0,,,
-2019-03-23,UFC Fight Night: Thompson vs. Pettis,Alexis Davis vs. Jennifer Maia,Alexis Davis,0.881,3,0.863,41-26,0-0,0-0,8-0,,,
-2021-08-07,UFC 265: Lewis vs. Gane,King Green vs. Rafael Fiziev,King Green,0.877,3,0.916,66-43,0-0,0-0,0-0,,,
-2021-08-07,UFC 265: Lewis vs. Gane,King Green vs. Rafael Fiziev,King Green,0.877,1,0.709,32-25,0-0,0-0,0-0,,,
-2020-11-07,UFC Fight Night: Santos vs. Teixeira,Andrei Arlovski vs. Tanner Boser,Tanner Boser,0.874,3,0.819,29-15,0-0,0-0,0-0,,,
-2020-11-07,UFC Fight Night: Santos vs. Teixeira,Andrei Arlovski vs. Tanner Boser,Tanner Boser,0.874,2,0.755,23-13,0-0,0-0,0-0,,,
-2021-05-01,UFC Fight Night: Reyes vs. Prochazka,Luke Sanders vs. Felipe Colares,Luke Sanders,0.868,1,0.998,48-16,1-0,0-0,99-34,,,
-2021-05-01,UFC Fight Night: Reyes vs. Prochazka,Luke Sanders vs. Felipe Colares,Luke Sanders,0.868,2,0.515,33-25,0-0,1-1,42-105,,,
-2019-11-16,UFC Fight Night: Blachowicz vs. Jacare,Francisco Trinaldo vs. King Green,King Green,0.868,1,0.805,9-4,0-0,0-1,195-19,,,
-2019-11-16,UFC Fight Night: Blachowicz vs. Jacare,Francisco Trinaldo vs. King Green,King Green,0.868,3,0.758,17-12,0-0,2-0,30-45,,,
-2018-03-17,UFC Fight Night: Werdum vs. Volkov,Tom Duquesnoy vs. Terrion Ware,Terrion Ware,0.866,2,0.907,34-22,0-0,0-0,57-0,,,
-2018-03-17,UFC Fight Night: Werdum vs. Volkov,Tom Duquesnoy vs. Terrion Ware,Terrion Ware,0.866,1,0.771,26-22,0-0,1-0,15-1,,,
-2022-08-20,UFC 278: Usman vs. Edwards,Aoriqileng vs. Jay Perrin,Jay Perrin,0.857,3,0.983,48-25,0-0,1-0,171-0,,,
-2022-08-20,UFC 278: Usman vs. Edwards,Aoriqileng vs. Jay Perrin,Jay Perrin,0.857,1,0.746,20-18,0-0,1-0,64-1,,,
-2017-02-11,UFC 208: Holm vs. De Randamie,Anderson Silva vs. Derek Brunson,Derek Brunson,0.853,1,0.866,20-8,0-0,0-0,35-0,,,
-2017-02-11,UFC 208: Holm vs. De Randamie,Anderson Silva vs. Derek Brunson,Derek Brunson,0.853,3,0.791,25-25,0-0,1-0,122-0,,,
-2022-12-10,UFC 282: Blachowicz vs. Ankalaev,Paddy Pimblett vs. Jared Gordon,Jared Gordon,0.851,3,0.878,4-6,0-0,2-0,233-35,,,
-2022-12-10,UFC 282: Blachowicz vs. Ankalaev,Paddy Pimblett vs. Jared Gordon,Jared Gordon,0.851,1,0.709,32-29,0-0,0-0,28-0,,,
-2021-04-10,UFC Fight Night: Vettori vs. Holland,Luis Saldana vs. Jordan Griffin,Jordan Griffin,0.839,1,0.8,18-19,0-0,2-0,133-0,,,
-2021-04-10,UFC Fight Night: Vettori vs. Holland,Luis Saldana vs. Jordan Griffin,Jordan Griffin,0.839,2,0.722,4-9,0-0,2-0,197-30,,,
-2020-02-08,UFC 247: Jones vs. Reyes,Derrick Lewis vs. Ilir Latifi,Ilir Latifi,0.826,2,0.933,2-2,0-0,2-0,197-8,,,
-2020-02-08,UFC 247: Jones vs. Reyes,Derrick Lewis vs. Ilir Latifi,Ilir Latifi,0.826,3,0.71,1-11,0-0,1-0,187-4,,,
-2019-07-13,UFC Fight Night: De Randamie vs. Ladd,Benito Lopez vs. Vince Morales,Vince Morales,0.826,1,0.894,16-16,1-0,0-0,29-0,,,
-2019-07-13,UFC Fight Night: De Randamie vs. Ladd,Benito Lopez vs. Vince Morales,Vince Morales,0.826,3,0.765,32-21,0-0,0-0,0-0,,,
-2018-04-07,UFC 223: Khabib vs. Iaquinta,Rose Namajunas vs. Joanna Jedrzejczyk,Joanna Jedrzejczyk,0.819,4,0.86,38-22,0-0,0-0,0-0,,,
-2018-04-07,UFC 223: Khabib vs. Iaquinta,Rose Namajunas vs. Joanna Jedrzejczyk,Joanna Jedrzejczyk,0.819,3,0.799,30-19,0-0,0-0,0-0,,,
-2023-08-12,UFC Fight Night: Luque vs. Dos Anjos,Cub Swanson vs. Hakeem Dawodu,Hakeem Dawodu,0.812,3,0.787,37-26,0-0,0-1,50-81,,,
-2023-08-12,UFC Fight Night: Luque vs. Dos Anjos,Cub Swanson vs. Hakeem Dawodu,Hakeem Dawodu,0.812,2,0.724,29-28,0-0,0-0,140-4,,,
-2017-06-03,UFC 212: Aldo vs. Holloway,Vitor Belfort vs. Nate Marquardt,Nate Marquardt,0.803,1,0.853,11-3,0-0,1-0,63-0,,,
-2017-06-03,UFC 212: Aldo vs. Holloway,Vitor Belfort vs. Nate Marquardt,Nate Marquardt,0.803,2,0.739,26-16,0-0,0-0,0-0,,,
+date,event,bout,model_favoured,model_conf,round,p_fav_won_round
+2022-02-26,UFC Fight Night: Makhachev vs. Green,Ji Yeon Kim vs. Priscila Cachoeira,Ji Yeon Kim,0.967,3,0.967
+2022-02-26,UFC Fight Night: Makhachev vs. Green,Ji Yeon Kim vs. Priscila Cachoeira,Ji Yeon Kim,0.967,2,0.908
+2023-12-16,UFC 296: Edwards vs. Covington,Irene Aldana vs. Karol Rosa,Karol Rosa,0.966,3,0.966
+2023-12-16,UFC 296: Edwards vs. Covington,Irene Aldana vs. Karol Rosa,Karol Rosa,0.966,1,0.854
+2018-12-15,UFC Fight Night: Lee vs. Iaquinta,King Green vs. Drakkar Klose,King Green,0.964,2,0.988
+2018-12-15,UFC Fight Night: Lee vs. Iaquinta,King Green vs. Drakkar Klose,King Green,0.964,1,0.899
+2019-06-08,UFC 238: Cejudo vs. Moraes,Katlyn Cerminara vs. Joanne Wood,Joanne Wood,0.944,1,0.917
+2019-06-08,UFC 238: Cejudo vs. Moraes,Katlyn Cerminara vs. Joanne Wood,Joanne Wood,0.944,3,0.837
+2023-10-07,UFC Fight Night: Dawson vs. Green,Vanessa Demopoulos vs. Kanako Murata,Kanako Murata,0.944,3,0.981
+2023-10-07,UFC Fight Night: Dawson vs. Green,Vanessa Demopoulos vs. Kanako Murata,Kanako Murata,0.944,2,0.9
+2022-04-30,UFC Fight Night: Font vs. Vera,Rob Font vs. Marlon Vera,Rob Font,0.935,1,0.972
+2022-04-30,UFC Fight Night: Font vs. Vera,Rob Font vs. Marlon Vera,Rob Font,0.935,3,0.9
+2020-08-01,UFC Fight Night: Brunson vs. Shahbazyan,Johnny Munoz vs. Nate Maness,Johnny Munoz,0.922,1,0.985
+2020-08-01,UFC Fight Night: Brunson vs. Shahbazyan,Johnny Munoz vs. Nate Maness,Johnny Munoz,0.922,3,0.812
+2019-08-31,UFC Fight Night: Andrade vs. Zhang,Alatengheili vs. Batgerel Danaa,Batgerel Danaa,0.905,2,0.9
+2019-08-31,UFC Fight Night: Andrade vs. Zhang,Alatengheili vs. Batgerel Danaa,Batgerel Danaa,0.905,3,0.827
+2020-11-21,UFC 255: Figueiredo vs. Perez,Daniel Rodriguez vs. Nicolas Dalby,Daniel Rodriguez,0.889,1,0.814
+2020-11-21,UFC 255: Figueiredo vs. Perez,Daniel Rodriguez vs. Nicolas Dalby,Daniel Rodriguez,0.889,2,0.785
+2020-10-31,UFC Fight Night: Hall vs. Silva,King Green vs. Thiago Moises,King Green,0.889,1,0.819
+2020-10-31,UFC Fight Night: Hall vs. Silva,King Green vs. Thiago Moises,King Green,0.889,3,0.793
+2019-03-23,UFC Fight Night: Thompson vs. Pettis,Alexis Davis vs. Jennifer Maia,Alexis Davis,0.881,2,0.931
+2019-03-23,UFC Fight Night: Thompson vs. Pettis,Alexis Davis vs. Jennifer Maia,Alexis Davis,0.881,3,0.863
+2021-08-07,UFC 265: Lewis vs. Gane,King Green vs. Rafael Fiziev,King Green,0.877,3,0.916
+2021-08-07,UFC 265: Lewis vs. Gane,King Green vs. Rafael Fiziev,King Green,0.877,1,0.709
+2020-11-07,UFC Fight Night: Santos vs. Teixeira,Andrei Arlovski vs. Tanner Boser,Tanner Boser,0.874,3,0.819
+2020-11-07,UFC Fight Night: Santos vs. Teixeira,Andrei Arlovski vs. Tanner Boser,Tanner Boser,0.874,2,0.755
+2021-05-01,UFC Fight Night: Reyes vs. Prochazka,Luke Sanders vs. Felipe Colares,Luke Sanders,0.868,1,0.998
+2021-05-01,UFC Fight Night: Reyes vs. Prochazka,Luke Sanders vs. Felipe Colares,Luke Sanders,0.868,2,0.515
+2019-11-16,UFC Fight Night: Blachowicz vs. Jacare,Francisco Trinaldo vs. King Green,King Green,0.868,1,0.805
+2019-11-16,UFC Fight Night: Blachowicz vs. Jacare,Francisco Trinaldo vs. King Green,King Green,0.868,3,0.758
+2018-03-17,UFC Fight Night: Werdum vs. Volkov,Tom Duquesnoy vs. Terrion Ware,Terrion Ware,0.866,2,0.907
+2018-03-17,UFC Fight Night: Werdum vs. Volkov,Tom Duquesnoy vs. Terrion Ware,Terrion Ware,0.866,1,0.771
+2022-08-20,UFC 278: Usman vs. Edwards,Aoriqileng vs. Jay Perrin,Jay Perrin,0.857,3,0.983
+2022-08-20,UFC 278: Usman vs. Edwards,Aoriqileng vs. Jay Perrin,Jay Perrin,0.857,1,0.746
+2017-02-11,UFC 208: Holm vs. De Randamie,Anderson Silva vs. Derek Brunson,Derek Brunson,0.853,1,0.866
+2017-02-11,UFC 208: Holm vs. De Randamie,Anderson Silva vs. Derek Brunson,Derek Brunson,0.853,3,0.791
+2022-12-10,UFC 282: Blachowicz vs. Ankalaev,Paddy Pimblett vs. Jared Gordon,Jared Gordon,0.851,3,0.878
+2022-12-10,UFC 282: Blachowicz vs. Ankalaev,Paddy Pimblett vs. Jared Gordon,Jared Gordon,0.851,1,0.709
+2021-04-10,UFC Fight Night: Vettori vs. Holland,Luis Saldana vs. Jordan Griffin,Jordan Griffin,0.839,1,0.8
+2021-04-10,UFC Fight Night: Vettori vs. Holland,Luis Saldana vs. Jordan Griffin,Jordan Griffin,0.839,2,0.722
+2020-02-08,UFC 247: Jones vs. Reyes,Derrick Lewis vs. Ilir Latifi,Ilir Latifi,0.826,2,0.933
+2020-02-08,UFC 247: Jones vs. Reyes,Derrick Lewis vs. Ilir Latifi,Ilir Latifi,0.826,3,0.71
+2019-07-13,UFC Fight Night: De Randamie vs. Ladd,Benito Lopez vs. Vince Morales,Vince Morales,0.826,1,0.894
+2019-07-13,UFC Fight Night: De Randamie vs. Ladd,Benito Lopez vs. Vince Morales,Vince Morales,0.826,3,0.765
+2018-04-07,UFC 223: Khabib vs. Iaquinta,Rose Namajunas vs. Joanna Jedrzejczyk,Joanna Jedrzejczyk,0.819,4,0.86
+2018-04-07,UFC 223: Khabib vs. Iaquinta,Rose Namajunas vs. Joanna Jedrzejczyk,Joanna Jedrzejczyk,0.819,3,0.799
+2023-08-12,UFC Fight Night: Luque vs. Dos Anjos,Cub Swanson vs. Hakeem Dawodu,Hakeem Dawodu,0.812,3,0.787
+2023-08-12,UFC Fight Night: Luque vs. Dos Anjos,Cub Swanson vs. Hakeem Dawodu,Hakeem Dawodu,0.812,2,0.724
+2017-06-03,UFC 212: Aldo vs. Holloway,Vitor Belfort vs. Nate Marquardt,Nate Marquardt,0.803,1,0.853
+2017-06-03,UFC 212: Aldo vs. Holloway,Vitor Belfort vs. Nate Marquardt,Nate Marquardt,0.803,2,0.739

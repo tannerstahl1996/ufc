@@ -5,8 +5,14 @@ third-party scrape of ufcstats.com. Pinning the commit means every result in
 this repo can be reproduced against exactly the same rows, even though the
 upstream repo updates daily.
 
+This repository does not include or redistribute any UFC data. Running this
+script downloads a third-party dataset to your machine. UFC's Terms of Use
+restrict scraping and building databases from UFC website content, and it is
+unclear whether those terms cover ufcstats.com. Read them and decide for
+yourself before running this. You are responsible for your own use.
+
 Usage:
-    python scripts/fetch_data.py            # download + verify
+    python scripts/fetch_data.py --i-have-read-the-terms   # download + verify
     python scripts/fetch_data.py --pin      # (maintainer) record checksums for the commit below
 """
 import hashlib
@@ -29,6 +35,8 @@ def sha256(path: Path) -> str:
 
 
 def main() -> None:
+    if "--i-have-read-the-terms" not in sys.argv and "--pin" not in sys.argv:
+        sys.exit(__doc__)
     RAW.mkdir(parents=True, exist_ok=True)
     for f in FILES:
         dest = RAW / f
