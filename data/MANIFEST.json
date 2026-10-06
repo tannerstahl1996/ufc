@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/Greco1899/scrape_ufc_stats",
+  "license": "GPL-3.0 (upstream data scraped from ufcstats.com)",
+  "commit": "1ccacc5cd4f642bd2deb8b278405a0205791bfa3",
+  "files": {
+    "ufc_event_details.csv": "7ff5ff0155d6a1dc55a39b4ec61ef569c6ce0f43b1f22edd730744759e7ee66a",
+    "ufc_fight_results.csv": "e7253107447bf2eaab780776401b2543ac5283d0272771b67fde3d1983be139b",
+    "ufc_fight_stats.csv": "58f6f0d7ac45f299c877e16135458c33cc3c50454c948abdeec5dc8ea54d2c09"
+  }
+}

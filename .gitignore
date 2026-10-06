@@ -1,0 +1,6 @@
+data/raw/*.csv
+data/processed/
+__pycache__/
+.venv/
+*.pyc
+reports/test_access.log
